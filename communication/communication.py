@@ -11,4 +11,4 @@ class ArduinoConnexion(object):
     def sendData(self, data):
         # Encode en binaire chaque éléments de data séparément pour l'envoyer
         # à l'arduino car impossible de faire cette opération sur toute une liste en même temps.
-        self.__serial.write(data.encode('ascii'))
+        self.__serial.write(data.encode('ascii'))# https://roboticsbackend.com/raspberry-pi-arduino-serial-communication/
