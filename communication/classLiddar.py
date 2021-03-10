@@ -7,6 +7,18 @@ class Liddar:
     """
     Classe gérant le liddar et permettant de récupérer les valeurs 
     une fois le liddar lancé sur ros.
+    
+    Lancement du liddar, lancer les commandes suivantes une fois le liddar connecté :
+        1) ls -l dev | grep ttyUSB 
+                si on a crw-rw-----, alors il faut lancer : sudo chmod 666 /dev/ttyUSB0
+                sinon, on ne fait rien.
+        2) cd ~/catkin_ws/
+        3) catkin_make
+        4) source devel/setup.bash
+        5) roslaunch rplidar_ros rplidar.launch
+        
+        Pour vérifier qu'il fonctionne, rentrer la command suivante 
+        voir une suite de valeur : rostopic echo /scan
     """
     def __init__(self):
         self.angles = None
@@ -34,10 +46,10 @@ class Liddar:
         Cette fonction permet d'obtenir les valeurs range et angle du liddar. 
       
         Parameters: 
-            waintingTime (int) : Le temps d'attente pour obtenir les données du capteur.
+            waintingTime (int) : Le temps d'attente max pour obtenir les données du capteur.
       
         Returns: 
-            list[list[int], list[int]] : Retourne une liste contenant comme première argument 
+            list[list[float], list[float]] : Retourne une liste contenant comme première argument 
             une liste de toutes les valeurs concernant les ranges et en second une liste des angles.      
         """
         oldTime, currentTime = time(), time()
