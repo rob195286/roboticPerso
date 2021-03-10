@@ -1,2 +1,6 @@
 https://learn.adafruit.com/slamtec-rplidar-on-pi?view=all
 https://www.slamtec.com/en/Support#rplidar-a-series
+
+
+	démarrage du projet :
+https://roboticsbackend.com/make-ros-launch-start-on-boot-with-robot_upstart/
