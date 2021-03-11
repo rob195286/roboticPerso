@@ -9,7 +9,7 @@ class Liddar:
     une fois le liddar lancé sur ros.
     
     Lancement du liddar, lancer les commandes suivantes une fois le liddar connecté :
-        1) ls -l dev | grep ttyUSB 
+        1) ls -l /dev | grep ttyUSB 
                 si on a crw-rw-----, alors il faut lancer : sudo chmod 666 /dev/ttyUSB0
                 sinon, on ne fait rien.
         2) cd ~/catkin_ws/
